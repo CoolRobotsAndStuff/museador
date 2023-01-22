@@ -87,9 +87,9 @@ def find_best_itinenary(perm_list):
             time_count += travel_time_to_museum
         perm_times.append(time_count)
     
-    max_perm_time = max(perm_times)
+    min_perm_time = min(perm_times)
 
-    return perm_list[perm_times.index(max_perm_time)]
+    return perm_list[perm_times.index(min_perm_time)]
 
 
 def convert_ids_to_names(id_list, museum_list):
