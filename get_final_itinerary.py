@@ -21,7 +21,9 @@ def get_complete_itinerary(itinerary_ids, time_to_spend_at_museums, extra_travel
             continue
 
         else:
-            travel_time = id_times_dict[str(id)][str(itinerary_ids[index-1])] + extra_travel_time
+            print("Calculating travel from id", str(id), "to id", str(itinerary_ids[index-1]))
+
+            travel_time = id_times_dict[str(itinerary_ids[index-1])][str(id)] + extra_travel_time
 
             final_itinerary.append({"type":"travel", "start_time":total_time, "duration":travel_time})
 
