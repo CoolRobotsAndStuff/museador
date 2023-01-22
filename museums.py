@@ -54,6 +54,28 @@ class Museum():
         print("Requiere pedir turno: ", ("Sí" if self.requires_appointment else "No"))
         if self.notes != "":
             print("Notas:", self.notes)
+
+    def get_string(self):
+        dat = []
+        dat.append("Nombre: " + self.name)
+        dat.append("ID: " + str(self.id))
+        day_string = "Días: "
+        for d in self.open_days:
+            day_string += DAY_NUMBER_TO_STRING[d] + ", "
+        dat.append(day_string)
+        dat.append("Horarios:" + datetime.strftime(self.opening_time, "%H:%M") + " - " + datetime.strftime(self.closing_time, "%H:%M"))
+        dat.append("Precio de entrada: " + str((self.entrance_price if self.entrance_price is not None else "?")))
+        if self.tags is None:
+            dat.append("Etiquetas: Ninguna")
+        else:
+            tag_string = "Etiquetas: "
+            for t in self.tags:
+                tag_string += t + ", "
+        dat.append("Requiere pedir turno: " + ("Sí" if self.requires_appointment else "No"))
+        if self.notes != "":
+            dat.append("Notas:" + self.notes)
+        
+        return "\n".join(dat)
         
 
 museums = [
