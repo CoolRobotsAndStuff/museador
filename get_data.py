@@ -7,7 +7,7 @@ import pprint
 import json
 
 
-gmaps = googlemaps.Client(key="AIzaSyDDa7j-PUzh2F_eV6qh3TKH8fdsDCmLBdE")
+gmaps = googlemaps.Client(key="yourkeyhere")
 
 def generate_and_save_id_times_dict():
 
